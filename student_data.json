@@ -1,0 +1,40 @@
+{
+    "students":[
+        {
+            "name": "Naim Ahmed",
+            "muddleName": null,
+            "age": 25,
+            "cgpa": 3.29,
+            "isRegistered": true,
+            "languages":["Bangla","English","German"],
+            "friends":[
+                {
+                    "name":"Jayanto",
+                    "age":25
+                },
+                {
+                    "name":"Shoikot",
+                    "age":24
+                }
+            ]
+        },
+        {
+            "name": "Riadul Islam",
+            "muddleName": null,
+            "age": 25,
+            "cgpa": null,
+            "isRegistered": true,
+            "languages":["Bangla","English","Hindi"],
+            "friends":[
+                {
+                    "name":"Moaj",
+                    "age":25
+                },
+                {
+                    "name":"Tanjin",
+                    "age":24
+                }
+            ]
+        }
+    ]
+}
