@@ -47,8 +47,8 @@ function financialStatus(balance) {
 }
 
 // Function to check financial condition
-function financialCondition(totalExp, income) {
-    if (totalExp > income) {
+function financialCondition(userBudget) {
+    if (userBudget.totalExp > userBudget.income) {
         return "Your Expense is more than your Income";
     } else {
         return "Your Income is more than your Expense";
@@ -56,32 +56,44 @@ function financialCondition(totalExp, income) {
 }
 
 // Function to display result 
-function displayResult(username, income, totalExp, balance, condition, savings) {
+function displayResult(userBudget) {
     document.querySelector('.details').innerHTML = 
-        `Name: ${username}<br>Income: ${income}<br>Expense: ${totalExp}<br>Savings: ${balance}`;
+        `Name: ${userBudget.username}<br>
+         Income: ${userBudget.income}<br>
+         Expense: ${userBudget.totalExp}<br>
+         Savings: ${userBudget.balance}`;
     
     document.querySelector('.condition').innerHTML = 
-        `${condition}<br>${savings}`;
+        `${userBudget.condition}<br>${userBudget.savings}`;
 }
 
 // Main Function
 function budgetTracker() {
-    const username = getUserInput("Enter your name:");
-    const income = getUserInput("Your Income:", true);
-    const numOfExp = getUserInput("Number of expenses:", true);
+    // Object for budget tracker 
+    let userBudget = {
+        username: '',
+        income: 0,
+        expenses: [],
+        totalExp: 0,
+        balance: 0,
+        savings: '',     
+        condition: ''    
+    };
 
-    if (isNaN(income) || isNaN(numOfExp) || income < 0 || numOfExp < 0) {
+    userBudget.username = getUserInput("Enter your name:");
+    userBudget.income = getUserInput("Your Income:", true);
+    const numOfExp = getUserInput("Number of expenses:", true); 
+
+    if (isNaN(userBudget.income) || isNaN(numOfExp) || userBudget.income < 0 || numOfExp < 0) {
         alert("Invalid Input. Please enter valid numbers.");
         return;
     }
-
-    const expenses = getExpenses(numOfExp);
-    const totalExp = totalExpenses(expenses);
-    const balance = calculateBalance(income, totalExp);
-    const savings = financialStatus(balance);
-    const condition = financialCondition(totalExp, income);
-
-    displayResult(username, income, totalExp, balance, condition, savings);
+    userBudget.expenses = getExpenses(numOfExp); 
+    userBudget.totalExp = totalExpenses(userBudget.expenses); 
+    userBudget.balance = calculateBalance(userBudget.income, userBudget.totalExp); 
+    userBudget.savings = financialStatus(userBudget.balance);
+    userBudget.condition = financialCondition(userBudget);
+    displayResult(userBudget);
 }
 
 // Call the main function
