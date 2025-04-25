@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="event_object.css">
+</head>
+<body>
+    <label for="name">Fullname: 
+        <input type="text" name="name"><br>
+        <p class="p1"></p>
+    </label>
+    <div>
+        <h2>Select the languages you know:</h2>
+        <label><input type="checkbox" value="C" onchange="updateText()"> C</label><br>
+        <label><input type="checkbox" value="Java" onchange="updateText()"> Java</label><br>
+        <label><input type="checkbox" value="JavaScript" onchange="updateText()"> JavaScript</label><br><br>
+        <p id="output">I know</p>
+    </div>
+    <script src="event_object.js"></script>
+</body>
+</html>

@@ -1,27 +1,25 @@
 .b1{
     height: 4rem;
     width: 7rem;
-    border-radius: 40%;
     background-color: red;
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
 }
 .b1:hover{
-    background-color: green;
+    background-color: rgb(214, 60, 60);
 }
 
 .b2{
     height: 4rem;
     width: 7rem;
-    border-radius: 40%;
     background-color: green;
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
 }
 .b2:hover{
-    background-color: red;
+    background-color: rgb(70, 119, 70);
 }
 h1{
     color: red;

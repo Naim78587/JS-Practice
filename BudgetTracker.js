@@ -30,7 +30,7 @@ function totalExpenses(expenses) {
 
 // Function to calculate balance 
 function calculateBalance(income, totalExp) {
-    return income - totalExp;
+    return income - totalExp;  
 }
 
 // Function to show financial status
@@ -67,8 +67,30 @@ function displayResult(userBudget) {
         `${userBudget.condition}<br>${userBudget.savings}`;
 }
 
+/*
+//Function to store budget data in local storage
+function saveBudgetLocal(userBudget){
+    localStorage.setItem("userBudget", JSON.stringify(userBudget));
+}
+
+
+//Function to read budget data from local storage
+function readBudgetLocal(){
+    const saveBudget = localStorage.getItem("userBudget");
+    return saveBudget ? JSON.parse(saveBudget) : null;
+}
+
+//Function to clear budget data from local storage
+function clearBudgetLocal(){
+    localStorage.removeItem("userBudget");
+    console.log("Budget Data Cleared From Local Storage...");
+}
+*/
+
 // Main Function
 function budgetTracker() {
+    
+    //let userBudget = readBudgetLocal();
     // Object for budget tracker 
     let userBudget = {
         username: '',
@@ -94,7 +116,7 @@ function budgetTracker() {
     userBudget.savings = financialStatus(userBudget.balance);
     userBudget.condition = financialCondition(userBudget);
     displayResult(userBudget);
+  
 }
 
-// Call the main function
 budgetTracker();
